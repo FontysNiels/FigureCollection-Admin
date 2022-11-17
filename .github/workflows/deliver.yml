@@ -17,6 +17,7 @@ jobs:
       - name: Login to registry
         run: >
           echo ${{ secrets.REGISTRY_PASSWORD }}
+           | sudo docker login niels040/figure-colldction-s3
           -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
       
       - name: Build image
