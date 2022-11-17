@@ -4,5 +4,5 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm build
+RUN npm run build
 CMD [ "http-server", "dist" ]
