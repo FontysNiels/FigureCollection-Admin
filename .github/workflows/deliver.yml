@@ -23,7 +23,7 @@ jobs:
       - name: Build image
         run: >
           sudo docker build . --file Dockerfile
-          --tag niels040/figure-colldction-s3:latest
+          --tag niels040/figure-colldction-s3:latest-admin
       
       - name: Push to registry
-        run: sudo docker push niels040/figure-colldction-s3:latest
+        run: sudo docker push niels040/figure-colldction-s3:latest-admin
