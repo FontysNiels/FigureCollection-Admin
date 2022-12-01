@@ -12,8 +12,10 @@ function ComponentEditor() {
 
     let arrayofnames = ["Brands", "Manufacturers", "Characters", "Lines", "Editions"]
     let count = 0;
-    const TableName = document.getElementById('tableName');
+    let TableName = document.getElementById('tabName');
+    
     function PrevComponent() {
+        TableName = document.getElementById('tabName');
         if (count === 0) {
             count = arrayofnames.length - 1;
             TableName.innerHTML = arrayofnames[count]
@@ -25,7 +27,7 @@ function ComponentEditor() {
     }
 
     function NextComponent() {
-        
+        TableName = document.getElementById('tabName');
         if (count === arrayofnames.length - 1) {
             count = 0;
             TableName.innerHTML = arrayofnames[count]
@@ -33,8 +35,6 @@ function ComponentEditor() {
         else {
             count++;
             TableName.innerHTML = arrayofnames[count]
-           
-
         }
     }
 
@@ -70,9 +70,8 @@ function ComponentEditor() {
                 </div>
             </div>
             <div className='col-6'>
-
                 <button className="btn btn-success carousel-control-prev-icon" onClick={() => { document.getElementById('CarouselBack').click(); PrevComponent();}}></button>
-                <span className='m-5 fw-bold' id='tableName'>{arrayofnames[count]}</span>
+                <span className='m-5 fw-bold' id='tabName'>{arrayofnames[count]}</span>
                 <button className="btn btn-success carousel-control-next-icon ml-3" onClick={() => { document.getElementById('CarouselNext').click(); NextComponent();}}></button>
 
                 <div id="carouselExampleControls" className="carousel slide" >
